@@ -2,5 +2,4 @@
 <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
 <div *ngIf="messageService.messages.length">
         <div *ngFor='let message of messageService.messages'> {{message}} </div>
-
 </div>

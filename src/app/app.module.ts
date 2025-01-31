@@ -4,16 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import {
   NgIf,
   NgFor,
   UpperCasePipe,
 } from '@angular/common';
-import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent
@@ -24,6 +27,7 @@ import { MessagesComponent } from './messages/messages.component';
     NgFor,
     NgIf,
     UpperCasePipe,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
