@@ -1,21 +1,37 @@
-h1 {
-    margin-bottom: 0;
-  }
-  nav a {
-    padding: 1rem;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-    background-color: #e8e8e8;
-    color: #3d3d3d;
-    border-radius: 4px;
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
 
-  }
-  
-  nav a:hover {
-    color: white;
-    background-color: #42545C;
-  }
-  nav a:active {
-    background-color: black;
-  }
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.dashboard {
+  margin-right: 5px;
+}
+nav a {
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  margin-top: 12px;
+  display: inline-block;
+  background-color: #f4f6f7;
+  color: #333;  
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: white;
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+nav a:active {
+  background-color: #2980b9;
+  transform: scale(1);
+}

@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  selectedHero: Hero | null = null;
 
   constructor(private heroService: HeroService) { }
 
@@ -20,5 +21,22 @@ export class DashboardComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+  }
+
+  edit(hero: Hero): void {
+    this.selectedHero = { ...hero };
+  }
+
+  saveEdit(): void {
+    if (!this.selectedHero) return;
+    const index = this.heroes.findIndex(h => h.id === this.selectedHero!.id);
+    if (index !== -1) {
+      this.heroes[index] = { ...this.selectedHero };
+    }
+    this.selectedHero = null;
+  }
+
+  closePopup(): void {
+    this.selectedHero = null;
   }
 }

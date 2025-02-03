@@ -8,12 +8,32 @@
   </button>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button type="button" class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<table class="heroes-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td><span class="badge">{{hero.id}}</span></td>
+      <td>{{hero.name}}</td>
+      <td>
+        <button type="button" class="edit" title="edit hero" (click)="edit(hero)">edit</button>
+        <button type="button" class="delete" title="delete hero" (click)="delete(hero)">Delete</button>
+      </td>
+    </tr>  
+  </tbody>
+  <div *ngIf="selectedHero" class="popup">
+    <div class="popup-content">
+      <label for="hero-name">Edit Hero Name:</label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" />
+    </div>
+    <div class="popup-buttons">
+      <button class="save-button" (click)="saveEdit()">Save</button>
+      <button class="cancel-button" (click)="closePopup()">Cancel</button>
+    </div>
+  </div>
+</table>

@@ -1,9 +1,17 @@
 <h2>Top Heroes</h2>
 <div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-      routerLink="/detail/{{hero.id}}">
-      {{hero.name}}
-  </a>
+  <button type="button" *ngFor="let hero of heroes" class="edit" (click)="edit(hero)">{{hero.name}}</button>
+  <div *ngIf="selectedHero" class="popup">
+    <div class="popup-content">
+      <label for="hero-name">Edit Hero Name:</label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" />
+    </div>
+    <div class="popup-buttons">
+      <button class="save-button" (click)="saveEdit()">Save</button>
+      <button class="cancel-button" (click)="closePopup()">Cancel</button>
+    </div>
+  </div>
 </div>
+
 
 <app-hero-search></app-hero-search>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "FontSystem";
+    src: url("./asset/fonts/db_helvethaicaais_x_bd_v3.2-webfont.ttf")
+      format("truetype");
+  }
+  body {
+    height: 100%;
+    font-family: "FontSystem", serif !important;
+  }

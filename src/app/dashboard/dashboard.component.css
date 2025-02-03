@@ -1,53 +1,108 @@
-/* DashboardComponent's private CSS styles */
-
 h2 {
-    text-align: center;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.heroes-menu {
+  padding: 0;
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+button {
+  background-color: #3f525c;
+  border-radius: 8px;
+  border: 0px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2); 
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 150px;
+  max-width: 250px; 
+  box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2c3e50; 
+  transform: scale(1.05);
+}
+
+@media (min-width: 600px) {
+  button {
+    width: 22%;
   }
-  
-  .heroes-menu {
-    padding: 0;
-    margin: auto;
-    max-width: 1000px;
-  
-    /* flexbox */
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: flex-start;
-    align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  button {
+    width: 18%;
   }
-  
-  a {
-    background-color: #3f525c;
-    border-radius: 2px;
-    padding: 1rem;
-    font-size: 1.2rem;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    min-width: 70px;
-    margin: .5rem auto;
-    box-sizing: border-box;
-  
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-  }
-  
-  @media (min-width: 600px) {
-    a {
-      width: 18%;
-      box-sizing: content-box;
-    }
-  }
-  
-  a:hover {
-    background-color: black;
-  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  max-width: 100%;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  background-color: #007BFF;
+  color: white;
+  border-radius: 25px;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button:hover {
+  background-color: #e2e6ea;
+}
+
+.save-button, .cancel-button {
+  padding: .6rem 1.4rem;
+  font-size: 1rem;
+  margin: 6px;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
